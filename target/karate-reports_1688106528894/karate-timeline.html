@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[1:10]","start":1688106183297,"end":1688106184460,"title":"src\/test\/resources\/features\/SecurityTest[1:10] 23:23:03.297-23:23:04.460 Negative Test verify user enters wrong username with correct password"},{"id":2,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[2:21]","start":1688106184466,"end":1688106184853,"title":"src\/test\/resources\/features\/SecurityTest[2:21] 23:23:04.466-23:23:04.853 Negative Test verify user enters correct username with wrong password"},{"id":3,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[3:31]","start":1688106184858,"end":1688106185364,"title":"src\/test\/resources\/features\/SecurityTest[3:31] 23:23:04.858-23:23:05.364 Positive Test validate correct username with password get a token"},{"id":4,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[4:40]","start":1688106185375,"end":1688106186015,"title":"src\/test\/resources\/features\/SecurityTest[4:40] 23:23:05.375-23:23:06.015 Positive Test validate with valid token with Status Code response true"},{"id":5,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[5:56]","start":1688106186025,"end":1688106186740,"title":"src\/test\/resources\/features\/SecurityTest[5:56] 23:23:06.025-23:23:06.740 Negative Test valdiate with valid token and invalid username"},{"id":6,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[6:73]","start":1688106186748,"end":1688106187452,"title":"src\/test\/resources\/features\/SecurityTest[6:73] 23:23:06.748-23:23:07.452 Negative Test validate with invalid token and valid valid username"},{"id":7,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[7:90]","start":1688106187456,"end":1688106187455,"title":"src\/test\/resources\/features\/SecurityTest[7:90] 23:23:07.456-23:23:07.455 Validate status code is OK and return all acounts"},{"id":8,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[8:95]","start":1688106187458,"end":1688106187457,"title":"src\/test\/resources\/features\/SecurityTest[8:95] 23:23:07.458-23:23:07.457 Verify primaryPersonID and email match"},{"id":9,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[9:106]","start":1688106187460,"end":1688106187459,"title":"src\/test\/resources\/features\/SecurityTest[9:106] 23:23:07.460-23:23:07.459 Create new account"},{"id":10,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[10:112]","start":1688106187462,"end":1688106187461,"title":"src\/test\/resources\/features\/SecurityTest[10:112] 23:23:07.462-23:23:07.461 Validate that duplicate email is not acceptable"},{"id":11,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[11:120]","start":1688106187464,"end":1688106187463,"title":"src\/test\/resources\/features\/SecurityTest[11:120] 23:23:07.464-23:23:07.463 Verify you can add phone number"},{"id":12,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[12:126]","start":1688106187466,"end":1688106187465,"title":"src\/test\/resources\/features\/SecurityTest[12:126] 23:23:07.466-23:23:07.465 Verify phone number can be updated"},{"id":13,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[13:132]","start":1688106187468,"end":1688106187467,"title":"src\/test\/resources\/features\/SecurityTest[13:132] 23:23:07.468-23:23:07.467 Validate that you can add car to account"},{"id":14,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[14:138]","start":1688106187469,"end":1688106187469,"title":"src\/test\/resources\/features\/SecurityTest[14:138] 23:23:07.469-23:23:07.469 Verify account can be deleted"},{"id":15,"group":1,"content":"src\/test\/resources\/features\/SecurityTest[15:145]","start":1688106187471,"end":1688106187470,"title":"src\/test\/resources\/features\/SecurityTest[15:145] 23:23:07.471-23:23:07.470 Verify new account can add multiple options"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
